@@ -1,0 +1,104 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  * {
+    border-color: #E2E8F0;
+  }
+  body {
+    font-family: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+  }
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Outfit', 'Plus Jakarta Sans', sans-serif;
+  }
+}
+
+/* Custom Glassmorphism & Card Styles */
+.glass-panel {
+  background: rgba(255, 255, 255, 0.85);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.6);
+}
+
+.glass-card {
+  background: rgba(255, 255, 255, 0.92);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+}
+
+/* Custom modern scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background: #CBD5E1;
+  border-radius: 9999px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #94A3B8;
+}
+
+/* Radar & scanner sweep */
+@keyframes scannerSweep {
+  0% {
+    top: 0%;
+    opacity: 0.8;
+  }
+  50% {
+    top: 95%;
+    opacity: 1;
+  }
+  100% {
+    top: 0%;
+    opacity: 0.8;
+  }
+}
+
+.animate-scanner {
+  animation: scannerSweep 2.2s ease-in-out infinite;
+}
+
+/* Camera target corner markers */
+.reticle-corner {
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  border-color: #10B981;
+}
+
+/* Bounding box pulse */
+@keyframes bboxPulse {
+  0%, 100% {
+    box-shadow: 0 0 0 2px rgba(16, 185, 129, 0.4), 0 0 20px rgba(16, 185, 129, 0.2);
+  }
+  50% {
+    box-shadow: 0 0 0 3px rgba(16, 185, 129, 0.8), 0 0 30px rgba(16, 185, 129, 0.5);
+  }
+}
+
+.animate-bbox {
+  animation: bboxPulse 1s ease-in-out infinite;
+}
+
+/* Alert pulse */
+@keyframes alertPulse {
+  0%, 100% {
+    background-color: rgba(254, 242, 242, 0.95);
+    border-color: #F87171;
+  }
+  50% {
+    background-color: rgba(254, 226, 226, 1);
+    border-color: #EF4444;
+    box-shadow: 0 0 25px rgba(239, 68, 68, 0.25);
+  }
+}
+
+.animate-alert-banner {
+  animation: alertPulse 1.4s ease-in-out infinite;
+}
